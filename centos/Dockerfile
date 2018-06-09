@@ -13,9 +13,6 @@ rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 
-RUN yum -y install vim net-tools telnet netcat nmap-ncat
+RUN yum -y install vim net-tools telnet netcat nmap-ncat mlocate
 
 CMD ["/usr/sbin/init"]
-
-
-

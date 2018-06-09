@@ -1,4 +1,4 @@
-FROM tcressy/centos
+FROM tcressy/centos:latest
 
 # Postgresql version
 ENV PG_VERSION 9.4
