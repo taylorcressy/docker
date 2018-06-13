@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Version
-PG_VERSION="9.4"
+PG_VERSION="9.5"
 
 #Settings
 DB_NAME=${DB_NAME:-}
