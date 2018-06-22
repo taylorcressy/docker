@@ -39,9 +39,6 @@ RUN chown -R postgres:postgres /var/lib/pgsql/$PG_VERSION/data/* && \
     sed -i 's/.*requiretty$/#Defaults requiretty/' /etc/sudoers && \
     chmod +x /usr/local/bin/postgresql.sh
 
-# Set volume
-VOLUME ["psql5vol-tcressy:/var/lib/pgsql"]
-
 RUN updatedb
 
 # Set username
@@ -50,6 +47,6 @@ USER postgres
 # Run PostgreSQL Server
 CMD ["/bin/bash", "/usr/local/bin/postgresql.sh"]
 
-# Expose ports.``
+# Expose ports.
 EXPOSE 5432
 EXPOSE 5000

@@ -3,6 +3,7 @@ MAINTAINER tcressy
 
 ENV container docker
 VOLUME [ “/sys/fs/cgroup” ]
+RUN yum -y install initscripts
 RUN yum -y install systemd; yum clean all; \
 (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
 rm -f /lib/systemd/system/multi-user.target.wants/*;\
@@ -13,6 +14,6 @@ rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 
-RUN yum -y install vim net-tools telnet netcat nmap-ncat mlocate
+RUN yum -y install vim net-tools telnet netcat nmap-ncat mlocate wget
 
-CMD ["/usr/sbin/init"]
+CMD ["/usr/sbin/init", ""]
